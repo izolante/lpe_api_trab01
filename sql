@@ -8,7 +8,7 @@ create table acontecimentos (
    descricao text,
    endereco text not null,
    numero_rua integer,
-   check (quantidade_estoque >= 0),
+   check (numero_rua >= 0),
    data_acontecido date not null,
    bairro integer not null,
    foreign key (bairro) references bairros (codigo)
