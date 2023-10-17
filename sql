@@ -6,8 +6,9 @@ create table bairros (
 create table acontecimentos (
    codigo serial not null primary key,
    descricao text,
-   latitude numeric(2,5) not null,
-   longitude numeric(2,5) not null,
+   endereco text not null,
+   numero_rua integer,
+   check (quantidade_estoque >= 0),
    data_acontecido date not null,
    bairro integer not null,
    foreign key (bairro) references bairros (codigo)
